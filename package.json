@@ -15,7 +15,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@types/p5": "^1.7.6",
     "dayjs": "^1.11.13",
-    "nuxt": "^3.14.159",
+    "nuxt": "^4.0.2",
     "nuxt-swiper": "^1.2.2",
     "p5": "^2.0.2",
     "vue": "latest"
