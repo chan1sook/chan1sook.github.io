@@ -369,7 +369,7 @@ export class CircuitCell implements CircuitSideJointsAvailableData {
     }
     const r2 = Math.random();
     if (r2 >= 0.5) {
-      order = [order[1], order[0], order[3], order[2]];
+      order = [order[1]!, order[0]!, order[3]!, order[2]!];
     }
 
     while (order.length > 0) {
@@ -434,7 +434,7 @@ export class CircuitCellGrid {
   hasCell(position: Vector2) {
     return (
       typeof this.gridData[position.y] !== "undefined" &&
-      typeof this.gridData[position.y][position.x] !== "undefined"
+      typeof this.gridData[position.y]![position.x] !== "undefined"
     );
   }
 
@@ -442,7 +442,7 @@ export class CircuitCellGrid {
     if (!this.hasCell(position)) {
       return undefined;
     }
-    return this.gridData[position.y][position.x];
+    return this.gridData[position.y]![position.x];
   }
 
   scanNextCellPosition(maxX = 100, maxY = 100) {
@@ -451,7 +451,7 @@ export class CircuitCellGrid {
         return new Vector2(0, r);
       }
       for (let c = 0; c <= maxX; c++) {
-        if (typeof this.gridData[r][c] === "undefined") {
+        if (typeof this.gridData[r]![c] === "undefined") {
           return new Vector2(c, r);
         }
       }
@@ -491,7 +491,7 @@ export class CircuitCellGrid {
     if (typeof this.gridData[position.y] === "undefined") {
       this.gridData[position.y] = [];
     }
-    this.gridData[position.y][position.x] = cell;
+    this.gridData[position.y]![position.x] = cell;
   }
 }
 
